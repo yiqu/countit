@@ -3,9 +3,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
-
 import { AppComponent } from './app.component';
-import { MdButtonModule, MdTooltipModule } from '@angular/material';
+import { InputModule } from './input-area/input.module';
+import { ResultModule } from './result-area/result.module'; 
 import 'hammerjs';
 
 @NgModule({
@@ -16,8 +16,9 @@ import 'hammerjs';
     BrowserModule,
     BrowserAnimationsModule,
     FormsModule,
-    MdButtonModule,
-    HttpModule
+    HttpModule,
+    InputModule,
+    ResultModule
   ],
   providers: [],
   bootstrap: [AppComponent]

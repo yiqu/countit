@@ -1,6 +1,6 @@
-# CountIt
+# Countit
 
-Words analyzer.
+Text analyzer.
 
 ## Watch
 
