@@ -1,0 +1,9 @@
+#result {
+  max-width: 70rem;
+}
+
+.result-area {
+  min-height: 9rem;
+  min-width: 70rem;
+  max-width: 70rem;
+}

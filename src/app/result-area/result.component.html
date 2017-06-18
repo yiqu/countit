@@ -1,1 +1,9 @@
-Result
+<div id="result" class="wrap"> 
+  <md-chip-list class="mat-chip-list-stacked">
+    <md-chip *ngFor="let word of this.wordService.wordDetailArray"
+        selected="true"
+        color="primary">
+      {{word.word}}
+    </md-chip>
+  </md-chip-list>
+</div>

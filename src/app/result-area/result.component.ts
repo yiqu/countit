@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { WordService } from '../shared/word.service';
 
 @Component({
   selector: 'result-area',
@@ -7,8 +8,16 @@ import { Component } from '@angular/core';
 })
 export class ResultComponent {
 
+  constructor(private wordService: WordService) {}
 
-  onClear() {
-    console.log('hi');
-  }
+  color: string;
+
+  availableColors = [
+    { name: 'none', color: '' },
+    { name: 'Primary', color: 'primary' },
+    { name: 'Accent', color: 'accent' },
+    { name: 'Warn', color: 'warn' }
+  ];
+
+ 
 }
