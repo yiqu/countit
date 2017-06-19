@@ -9,7 +9,7 @@ import { WordDetail } from '../shared/word.model';
 })
 export class ResultComponent {
 
-  constructor(private wordService: WordService) {}
+  constructor(public wordService: WordService) {}
 
   chipTextColor: string = "#000";
 
