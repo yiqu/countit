@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { WordService } from '../shared/word.service';
+import { WordDetail } from '../shared/word.model';
 
 @Component({
   selector: 'result-area',
@@ -10,14 +11,9 @@ export class ResultComponent {
 
   constructor(private wordService: WordService) {}
 
-  color: string;
+  chipTextColor: string = "#000";
 
-  availableColors = [
-    { name: 'none', color: '' },
-    { name: 'Primary', color: 'primary' },
-    { name: 'Accent', color: 'accent' },
-    { name: 'Warn', color: 'warn' }
-  ];
-
- 
+  chipSelect(clicked: WordDetail) {
+    console.log(clicked);
+  }
 }

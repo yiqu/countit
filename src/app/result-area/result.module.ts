@@ -1,10 +1,12 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 import { ResultComponent } from './result.component';
 import { WordService } from '../shared/word.service';
 
-import {MdChipsModule} from '@angular/material';
-
+import { MdButtonModule } from '@angular/material';
+import { MdChipsModule } from '@angular/material';
+import { MdTooltipModule } from '@angular/material';
 /**
  * Module for displaying people and search results
  * SharedModule is imported which will bring in MaterialModule
@@ -12,7 +14,10 @@ import {MdChipsModule} from '@angular/material';
 @NgModule({
   imports: [
     CommonModule,
-    MdChipsModule
+    FormsModule,
+    MdButtonModule,
+    MdChipsModule,
+    MdTooltipModule
   ],
 
   declarations: [

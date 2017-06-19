@@ -1,9 +1,8 @@
-#result {
-  max-width: 70rem;
+.details-button {
+  float: right;
+  margin-top: -2.1rem;
 }
 
-.result-area {
-  min-height: 9rem;
-  min-width: 70rem;
-  max-width: 70rem;
+.chip {
+  max-width: 44.5rem;
 }

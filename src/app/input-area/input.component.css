@@ -1,10 +1,10 @@
 #input {
   text-align: center;
-  max-width: 70rem;
+  max-width: 50rem;
 }
 
 .input-area {
   min-height: 9rem;
-  min-width: 70rem;
-  max-width: 70rem;
+  min-width: 100%;
+  max-width: 50rem;
 }

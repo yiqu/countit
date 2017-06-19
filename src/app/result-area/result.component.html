@@ -1,9 +1,14 @@
-<div id="result" class="wrap"> 
+<div class="wrap">
   <md-chip-list class="mat-chip-list-stacked">
-    <md-chip *ngFor="let word of this.wordService.wordDetailArray"
-        selected="true"
-        color="primary">
-      {{word.word}}
+    <md-chip class="chip" *ngFor="let word of this.wordService.wordDetailArray"
+      selected="false"
+      (click)="chipSelect(word)" 
+      color="" 
+      [ngStyle]="{'cursor':'pointer', 
+                  'color':chipTextColor, 
+                  'background-color':word.bgColor,
+                  'max-width':word.displayPercent}">
+        {{word.word}} {{word.displayPercent}}
     </md-chip>
   </md-chip-list>
 </div>
