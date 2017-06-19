@@ -1,6 +1,6 @@
 # Countit
 
-Text analyzer.
+Text analyzer. Live demo: https://yiqu.github.io/countit/
 
 ## Watch
 
