@@ -7,8 +7,7 @@ import { InputComponent } from './input.component';
 import { WordService } from '../shared/word.service';
 
 /**
- * Module for displaying people and search results
- * SharedModule is imported which will bring in MaterialModule
+ * Module class
  */
 @NgModule({
   imports: [

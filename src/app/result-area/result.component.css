@@ -1,3 +1,7 @@
+:host {
+  font-family: "Trebuchet MS", Helvetica, sans-serif;
+}
+
 .details-button {
   float: right;
   margin-top: -2.1rem;
@@ -5,4 +9,59 @@
 
 .chip {
   max-width: 44.5rem;
+  font-weight: bold;
+  user-select: none;
+  -webkit-user-select: none; /* webkit (safari, chrome) browsers */
+  -moz-user-select: none; /* mozilla browsers */
+  -khtml-user-select: none; /* webkit (konqueror) browsers */
+  -ms-user-select: none; /* IE10+ */
+}
+
+.chip-percent {
+  font-family: monospace;
+  font-weight: normal;
+}
+
+.word-detail-card {
+  font-family: "Trebuchet MS", Helvetica, sans-serif;
+  margin-bottom: 0.5rem;
+  
+}
+
+.detail-inner-label{
+  color: #878787;
+  font-style: italic;
+}
+
+.occur-label {
+  margin-left: -0.5rem;
+}
+
+.detail-inner-value {
+  font-weight: 800;
+  color: #595959;
+}
+
+.detail-inner-para {
+  color: #4d4d4d;
+}
+
+.card-actions {
+  padding-left: 0.5rem;
+}
+
+.detail-inner-title {
+  margin-left: -1rem;
+}
+
+.card-action-icon {
+  margin-bottom: 0.1rem;
+}
+
+.counter-section {
+  text-align: right;
+  font-family: Consolas, monaco, monospace;
+  font-size: 0.8rem;
+  margin-top: -0.9rem;
+
 }

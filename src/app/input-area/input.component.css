@@ -8,3 +8,13 @@
   min-width: 100%;
   max-width: 50rem;
 }
+
+.example-button-section {
+  float: left;
+  padding-bottom: 0.5rem;
+}
+
+.example-button {
+  background-color: #e6ffcc;
+  font-family: Consolas, monaco, monospace;
+}

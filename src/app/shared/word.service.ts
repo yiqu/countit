@@ -1,11 +1,21 @@
 import { Injectable } from '@angular/core';
 import { WordDetail } from './word.model';
 
+
+/**
+ * Injectable Word Service. Calculations are done here.
+ */
 @Injectable()
 export class WordService {
 
-  wordDetailArray: Array<WordDetail> = [];
+  // Array used by template
+  wordDetailArray: Array<string> = [];
+  // Array of unique words parsed
+  existingArray: Array<WordDetail> = [];
 
+  /**
+   * Constructor
+   */
   constructor() {}
 
 
@@ -15,39 +25,65 @@ export class WordService {
    * @param {Array<string>} inputArray array to do calculations on
    * @return {Array<WordDetail>} array to send to result component to display
    */
-  calculate(inputArray: Array<string>) {
-    //console.log(inputArray);
-    let testArray: Array<WordDetail> = [];
-    for (let i=0; i<5; i++) {
-      testArray.push(new WordDetail("Kevin"+i, i+5, '20', this.randColor()));
+  calculate(inputArray: Array<string>): void {
+    this.wordDetailArray = inputArray;
+    this.existingArray = [];
+
+    // Create the Words and set the count
+    for (let i of inputArray) {
+      if (this.containsAttributeValue(i, this.existingArray)) {
+        for (let j of this.existingArray) {
+          if (i === j.word) {
+            j.count ++;
+            break;
+          }
+        }
+      } else {
+        let word = new WordDetail(i, 1, "50%");
+        this.existingArray.push(word);
+      }
     }
-    testArray[0].displayPercent = '100%';
-    testArray[1].displayPercent = '50%';
-    testArray[2].displayPercent = '40%';
-    testArray[3].displayPercent = '15%';
-    testArray[4].displayPercent = '5%';
 
-    this.wordDetailArray = testArray;
-    console.log(testArray);
+    // Set the display percent and css percent
+    for (let word of this.existingArray) {
+      word.percent = this.calculatePercentage(word.count, inputArray.length) + "%";
+      word.setDisplayPercent(this.calculatePercentage(word.count, inputArray.length));
+    }
+
+    // Sort it by DESCENDING
+    this.existingArray.sort((a,b) => {
+      return b.count - a.count
+    });
   }
 
 
   /**
-   * Generate a high hex value in range of 200 to 255
+   * Loop through Array of Objects and find if the attribute "word"'s value
+   * equals to the given string. WordDetail{word: "foo"} will return true if supplied
+   * value is "foo".
    * 
-   * @return {string} hex value
+   * @param {string} value value to match
+   * @param {Array<WordDetail>} currentArray array to look in 
+   * @return {boolean} true there is a match, false otherwise
    */
-  randHex() {
-    return (Math.floor(Math.random() * 56) + 200).toString(16);
+  containsAttributeValue(value: string, currentArray: Array<WordDetail>): boolean {
+    return currentArray.filter((record) => {
+      return record.word === value
+    }).length > 0;
   }
 
 
   /**
-   * Generate a light color in hex value
+   * Calculate the percent based on total number of words entered.
    * 
-   * @return {string} hex value, ie. #ffffff
+   * @param {number} value value 
+   * @param {number} total total words entered by user
+   * @return {number} percentage. return 0 if total is 0
    */
-  randColor() {
-    return "#" + this.randHex() + "" + this.randHex() + "" + this.randHex();
+  calculatePercentage(value, total): number {
+    if (total !== 0) {
+      return Math.round((value / total) * 100); 
+    }
+    return 0;
   }
 }

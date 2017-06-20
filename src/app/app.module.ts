@@ -8,10 +8,15 @@ import { InputModule } from './input-area/input.module';
 import { ResultModule } from './result-area/result.module'; 
 import 'hammerjs';
 
+
+/**
+ * Module class
+ */
 @NgModule({
   declarations: [
     AppComponent
   ],
+
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
@@ -20,7 +25,11 @@ import 'hammerjs';
     InputModule,
     ResultModule
   ],
+
   providers: [],
-  bootstrap: [AppComponent]
+
+  bootstrap: [
+    AppComponent
+  ]
 })
 export class AppModule { }

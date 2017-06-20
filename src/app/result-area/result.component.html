@@ -1,14 +1,46 @@
+<div class="wrap counter-section">
+  {{this.wordService.wordDetailArray.length}} total words, 
+  {{this.wordService.existingArray.length}} are unique.
+</div> 
+
 <div class="wrap">
   <md-chip-list class="mat-chip-list-stacked">
-    <md-chip class="chip" *ngFor="let word of this.wordService.wordDetailArray"
-      selected="false"
-      (click)="chipSelect(word)" 
-      color="" 
-      [ngStyle]="{'cursor':'pointer', 
-                  'color':chipTextColor, 
-                  'background-color':word.bgColor,
-                  'max-width':word.displayPercent}">
-        {{word.word}} {{word.displayPercent}}
-    </md-chip>
+    <div class="word-display"  *ngFor="let word of this.wordService.existingArray">
+      <md-chip class="chip"
+        selected="true"
+        (click)="chipSelect(word)" 
+        color="" 
+        [ngStyle]="{'cursor':'pointer', 
+                    'color':chipDefaultTextColor, 
+                    'background-color':word.bgColor,
+                    'max-width':word.displayPercent}">
+          "{{word.word}}" <span class="chip-percent">({{word.percent}})</span>
+      </md-chip>
+      <md-card [ngStyle]="{'display':word.hideDetail, 'background-color':word.bgColor}" 
+        class="word-detail-card" >
+          <md-card-header class="detail-inner-title">
+            <md-card-title>
+              <span class="detail-inner-label">Word:</span> 
+              <span class="detail-inner-value">{{word.word}}</span>
+            </md-card-title>
+          </md-card-header>
+          <md-card-content>
+            <p class="occur-label">
+             <span class="detail-inner-label">Occurrences:</span> 
+             <span class="detail-inner-value">{{word.count}}</span> 
+             <span class="detail-inner-para">{{word.count > 1 ? 'times' : 'time'}}</span>.
+             <span class="detail-inner-para">It makes up </span>
+             <span class="detail-inner-value">{{word.percent}}</span> 
+             <span class="detail-inner-para">of the text.</span>
+            </p>
+          </md-card-content>
+          <md-card-actions class="card-actions">
+            <button md-raised-button [ngStyle]="{'background-color':word.bgColor}" (click)="getDefinition(word)" md-button>
+              Get Definition
+              <i class="material-icons card-action-icon">call_made</i>
+            </button>
+          </md-card-actions>
+      </md-card>
+    </div>
   </md-chip-list>
 </div>
