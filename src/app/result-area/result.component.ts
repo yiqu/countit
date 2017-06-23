@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { trigger, state, style, animate, transition} from "@angular/animations";
 import { WordService } from '../shared/word.service';
 import { WordDetail } from '../shared/word.model';
 
@@ -10,7 +11,21 @@ import { WordDetail } from '../shared/word.model';
 @Component({
   selector: 'result-area',
   templateUrl: './result.component.html',
-  styleUrls: ['./result.component.css']
+  styleUrls: ['./result.component.css'],
+  animations: [
+    trigger('slideIn', [
+      //state("active", style({transform: 'translateX(0)'})), // end look at the active state
+      // Coming in..
+      transition('inactive => active',
+        animate('0.2s ease-out', style({
+          opacity: 0,
+          transform: 'translateX(100%)'
+        }))
+      ),
+      // Leaving page..
+      
+    ])
+  ]
 })
 export class ResultComponent {
 

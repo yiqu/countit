@@ -5,7 +5,8 @@
 
 <div class="wrap">
   <md-chip-list class="mat-chip-list-stacked">
-    <div class="word-display"  *ngFor="let word of this.wordService.existingArray">
+    <div class="word-display" *ngFor="let word of this.wordService.existingArray"
+      [@slideIn]="word.animate">
       <md-chip class="chip"
         selected="true"
         (click)="chipSelect(word)" 
