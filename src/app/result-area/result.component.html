@@ -6,7 +6,7 @@
 <div class="wrap">
   <md-chip-list class="mat-chip-list-stacked">
     <div class="word-display" *ngFor="let word of this.wordService.existingArray"
-      [@slideIn]="word.animate">
+      [@slideIn]="word.state">
       <md-chip class="chip"
         selected="true"
         (click)="chipSelect(word)" 
@@ -17,8 +17,8 @@
                     'max-width':word.displayPercent}">
           "{{word.word}}" <span class="chip-percent">({{word.percent}})</span>
       </md-chip>
-      <md-card [ngStyle]="{'display':word.hideDetail, 'background-color':word.bgColor}" 
-        class="word-detail-card" >
+      <md-card [ngStyle]="{'background-color':word.bgColor}" 
+        class="word-detail-card" [@shrinkOut]="word.hideDetail">
           <md-card-header class="detail-inner-title">
             <md-card-title>
               <span class="detail-inner-label">Word:</span> 

@@ -13,17 +13,32 @@ import { WordDetail } from '../shared/word.model';
   templateUrl: './result.component.html',
   styleUrls: ['./result.component.css'],
   animations: [
+    // Animations for chips bar
     trigger('slideIn', [
-      //state("active", style({transform: 'translateX(0)'})), // end look at the active state
-      // Coming in..
-      transition('inactive => active',
-        animate('0.2s ease-out', style({
-          opacity: 0,
-          transform: 'translateX(100%)'
-        }))
-      ),
-      // Leaving page..
-      
+      // The 'active' state look and feel, which is normal
+      state('active', style({transform: 'translateX(0) scale(1)'})),
+      // adding chips animation
+      transition('void => active', [
+        style({transform: 'translateX(0) scale(0)'}),
+        animate(200)
+      ]),
+      // removing chips animation
+      transition('active => void', [
+        animate(100, style({transform: 'translateX(100%) scale(1)'}))
+      ])
+    ]),
+
+    // Animations for chip bar detail div
+    trigger('shrinkOut', [
+      // word detail div style when shown
+      state('inherit', style({height: '*' , display: 'inherit'})),
+      // word detail div style when hidden
+      state('none', style({ display: 'none'})),
+      // removing the detail div
+      transition('inherit => none', [
+        style({height: '*'}),
+        animate(250, style({height: 0}))
+      ])
     ])
   ]
 })
