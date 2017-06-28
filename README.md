@@ -5,6 +5,9 @@ Text analyzer. Live demo: https://yiqu.github.io/countit/
 Material components used:
 - [Chips](https://material.angular.io/components/chips/overview)
 
+Angular Animations 4.1.3:
+ - [Animations](https://angular.io/guide/animations)
+
 ## Fork and Run
 
 Run `ng serve` , navigate to `localhost:4200`
