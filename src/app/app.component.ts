@@ -15,7 +15,7 @@ const { version: appVersion } = require('../../package.json')
 })
 export class AppComponent {
   pageTitle: string = "Text Analyzer"
-  public appVersion;
+  appVersion: string;
 
   constructor() {
     this.appVersion = appVersion
