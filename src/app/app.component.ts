@@ -1,5 +1,8 @@
 import { Component } from '@angular/core';
 
+// App version
+const { version: appVersion } = require('../../package.json')
+
 
 /**
  * App root component class.
@@ -12,4 +15,10 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   pageTitle: string = "Text Analyzer"
+  public appVersion;
+
+  constructor() {
+    this.appVersion = appVersion
+  }
+
 }
