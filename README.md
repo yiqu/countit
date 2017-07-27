@@ -12,6 +12,8 @@ Angular Animations:
 
 Install Angular-CLI `npm install -g @angular/cli`
 
+`cd` into project, `npm install`
+
 Run `ng serve` , navigate to `localhost:4200`
 
 ## Build
