@@ -7,6 +7,9 @@
   min-height: 9rem;
   min-width: 100%;
   max-width: 50rem;
+  font-family: 'Roboto', sans-serif;
+  font-size: 0.9rem;
+  color: #4d4d4d;
 }
 
 .example-button-section {

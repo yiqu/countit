@@ -24,6 +24,8 @@ export class InputComponent {
     "8 Love never fails. But where there are prophecies, they will cease; where there are tongues, they will be stilled; where there is knowledge, it will pass away.";
   
   exampleButtonText: string = "Try me!";
+  // Timer for user's keyboard keyup event
+  timer: any;
 
   /**
    * Constructor
@@ -55,8 +57,14 @@ export class InputComponent {
    * regex used: http://regexr.com/3g6db
    */
   onKeyup(): void {
-    this.wordService.calculate(this.extractWords(this.inputText));
     this.updateExampleButton();
+    clearTimeout(this.timer);
+    this.timer = setTimeout(() => {
+      let parsedWords = this.extractWords(this.inputText);
+      if (parsedWords != null) {
+        this.wordService.calculate(parsedWords);
+      }
+    }, 800);
   }
 
 
@@ -72,7 +80,12 @@ export class InputComponent {
     return input.toLowerCase().match(/\b[^\d^_\W]+\b/g);
   }
 
-  updateExampleButton() {
+
+  /**
+   * Update the Try Me! button text
+   * 
+   */
+  updateExampleButton(): void {
     this.inputText.trim() === "" ? (this.exampleButtonText = "Try me!") : (this.exampleButtonText = "Clear");
   }
 }

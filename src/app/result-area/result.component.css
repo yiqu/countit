@@ -1,5 +1,6 @@
 :host {
-  font-family: "Trebuchet MS", Helvetica, sans-serif;
+  font-family: Roboto;
+  letter-spacing: 0.1rem;
 }
 
 .details-button {
@@ -25,7 +26,7 @@
 .word-detail-card {
   font-family: "Trebuchet MS", Helvetica, sans-serif;
   margin-bottom: 0.5rem;
-  
+  letter-spacing: 0rem;
 }
 
 .detail-inner-label{
@@ -60,8 +61,7 @@
 
 .counter-section {
   text-align: right;
-  font-family: Consolas, monaco, monospace;
+  font-family: 'Cairo', sans-serif;
   font-size: 0.8rem;
   margin-top: -0.9rem;
-
 }

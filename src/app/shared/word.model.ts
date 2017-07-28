@@ -53,11 +53,23 @@ export class WordDetail {
     return "#" + this.randHex() + "" + this.randHex() + "" + this.randHex();
   }
 
-  setDisplayPercent(value) {
-    this.displayPercent = (+value + 15) + "%";
+
+  /**
+   * Generate a high hex value in range of 200 to 255
+   * 
+   * @return {string} hex value
+   */
+  setDisplayPercent(value: number) {
+    this.displayPercent = (+value) + "%";
   }
 
-  getWordName() {
-    return this.word;
+
+  /**
+   * Get the display percent 
+   * 
+   * @return {number} display percent in number
+   */
+  getDisplayPercent(): number {
+    return +this.displayPercent.substring(0, this.displayPercent.length - 1);
   }
 }

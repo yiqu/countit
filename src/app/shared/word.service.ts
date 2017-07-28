@@ -26,8 +26,10 @@ export class WordService {
    * @return {Array<WordDetail>} array to send to result component to display
    */
   calculate(inputArray: Array<string>): void {
+
     this.wordDetailArray = inputArray;
     this.existingArray = [];
+    let largestDisplayPercent = 0;
 
     // Create the Words and set the count
     for (let i of inputArray) {
@@ -44,16 +46,39 @@ export class WordService {
       }
     }
 
-    // Set the display percent and css percent
+    // Sort it by DESCENDING
+    this.existingArray.sort((a,b) => {
+      return b.count - a.count
+    });
+
+    // Calculate and set the display percent and css percent
     for (let word of this.existingArray) {
       word.percent = this.calculatePercentage(word.count, inputArray.length) + "%";
       word.setDisplayPercent(this.calculatePercentage(word.count, inputArray.length));
     }
 
-    // Sort it by DESCENDING
-    this.existingArray.sort((a,b) => {
-      return b.count - a.count
-    });
+    /**
+     * To make use of the wasted white space, re-calculate the display percent. 
+     * This way, the word bars are longer.
+     * 
+     * Formula used: Display percent = (100 - percent) / 2 + percent
+     *
+     */
+    if (inputArray.length > 0) {
+      let highestPercent = this.existingArray[0].getDisplayPercent();
+      let widthToAdd;
+      if (highestPercent <= 99) {
+        widthToAdd = (100 - highestPercent) / 2;
+      } else {
+        widthToAdd = 0;
+      }
+
+      // Add the extra width to the display percent.
+      for (let word of this.existingArray) {
+        word.setDisplayPercent(word.getDisplayPercent() + widthToAdd);
+      }
+    }
+
   }
 
 
@@ -82,7 +107,7 @@ export class WordService {
    */
   calculatePercentage(value, total): number {
     if (total !== 0) {
-      return Math.round((value / total) * 100); 
+      return +((value / total) * 100).toFixed(2); 
     }
     return 0;
   }

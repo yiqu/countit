@@ -17,13 +17,16 @@ import { WordDetail } from '../shared/word.model';
     trigger('slideIn', [
       // The 'active' state look and feel, which is normal
       state('active', style({transform: 'translateX(0) scale(1)'})),
-      // adding chips animation
+      // adding chips animation. 
+      // TODO: Only trigger for new words.
       transition('void => active', [
         style({transform: 'translateX(0) scale(0)'}),
-        animate(200)
+        animate(150)
       ]),
+
       // removing chips animation
-      transition('active => void', [
+      // TODO: change state to cleared only when users hit Clear button.
+      transition('active => cleared', [
         animate(100, style({transform: 'translateX(100%) scale(1)'}))
       ])
     ]),
@@ -37,7 +40,7 @@ import { WordDetail } from '../shared/word.model';
       // removing the detail div
       transition('inherit => none', [
         style({height: '*'}),
-        animate(250, style({height: 0}))
+        animate(100, style({height: 0}))
       ])
     ])
   ]

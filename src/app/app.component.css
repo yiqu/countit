@@ -5,12 +5,14 @@
   min-height: 5rem;
   max-height: 5rem;
   color: #999999;
+  margin-bottom: -2.5rem;
 }
 
 .subtitle {
-  font-family: Verdana, Geneva, sans-serif;
+  font-family: 'Cairo', sans-serif;
   font-size: 0.9rem;
-  color: #808080;
+  color: #4d4d4d;
+  line-height: 1.4rem;
 }
 
 .version {

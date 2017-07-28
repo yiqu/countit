@@ -1,7 +1,10 @@
-<div class="wrap counter-section">
+<div class="wrap counter-section" *ngIf="this.wordService.wordDetailArray.length > 0">
   {{this.wordService.wordDetailArray.length}} total words, 
   {{this.wordService.existingArray.length}} are unique.
-</div> 
+</div>
+<div class="wrap counter-section" *ngIf="this.wordService.wordDetailArray.length === 0">
+  No words detected.
+</div>  
 
 <div class="wrap">
   <md-chip-list class="mat-chip-list-stacked">
