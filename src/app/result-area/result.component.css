@@ -24,14 +24,14 @@
 }
 
 .word-detail-card {
-  font-family: "Trebuchet MS", Helvetica, sans-serif;
+  font-family: Roboto,sans-serif;
   margin-bottom: 0.5rem;
   letter-spacing: 0rem;
 }
 
 .detail-inner-label{
-  color: #878787;
-  font-style: italic;
+  color: #4d4d4d;
+  font-weight: 600;
 }
 
 .occur-label {
