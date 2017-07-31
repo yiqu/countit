@@ -3,9 +3,10 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
+import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { InputModule } from './input-area/input.module';
-import { ResultModule } from './result-area/result.module'; 
+import { BodyModule } from './body-area/body.module';
+
 import 'hammerjs';
 
 
@@ -18,12 +19,12 @@ import 'hammerjs';
   ],
 
   imports: [
+    AppRoutingModule,
+    BodyModule,
     BrowserModule,
     BrowserAnimationsModule,
     FormsModule,
-    HttpModule,
-    InputModule,
-    ResultModule
+    HttpModule
   ],
 
   providers: [],

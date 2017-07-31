@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { trigger, state, style, animate, transition} from "@angular/animations";
+import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 import { WordService } from '../shared/word.service';
 import { WordDetail } from '../shared/word.model';
 
@@ -45,7 +46,7 @@ import { WordDetail } from '../shared/word.model';
     ])
   ]
 })
-export class ResultComponent {
+export class ResultComponent implements OnInit{
   chipDefaultTextColor: string = "#000";
   googleDefineUrl: string = "https://www.google.com/search?q=definition+for+";
   stopWordsLabel: string;
@@ -56,8 +57,19 @@ export class ResultComponent {
    * 
    * @param {WordService} wordService - injected Word Service
    */
-  constructor(public wordService: WordService) {
-    this.updateToggleLabel();
+  constructor(public wordService: WordService, 
+    public router: Router, 
+    public route: ActivatedRoute) {
+      this.updateToggleLabel();
+  }
+
+  ngOnInit() {
+    this.route.queryParams
+    .subscribe(params => {
+    // Defaults to stopWords=false if no query param provided.
+    // this.page = +params['page'] || 0;
+    console.log(params);
+    });
   }
 
 
@@ -86,7 +98,10 @@ export class ResultComponent {
    * 
    * @param {any} event - event
    */
-  stopWordsToggle(event: any): void {
+  toggleStopWords(event: any): void {
+    this.router.navigate(['/analyze'], {queryParams: {
+        stopWords: event.checked
+    }});
     this.wordService.stopWordsToggleState = event.checked;
     this.updateToggleLabel();
   }
