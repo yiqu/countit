@@ -31,7 +31,6 @@
 
 .detail-inner-label{
   color: #4d4d4d;
-  font-weight: 600;
 }
 
 .occur-label {
@@ -61,7 +60,23 @@
 
 .counter-section {
   text-align: right;
-  font-family: 'Cairo', sans-serif;
+  font-family: Roboto, sans-serif;
   font-size: 0.8rem;
-  margin-top: -0.9rem;
+  margin-top: -2.7rem;
+}
+
+.stop-word-toggle-label {
+  font-size: 0.8rem;
+}
+
+/* ----------- iPhone 4 and above ----------- 
+ * Move word counter section to new line
+ */
+@media only screen 
+  and (min-device-width: 320px) 
+  and (max-device-width: 736px) {
+    .counter-section {
+      text-align: left;
+      margin: auto;
+    }
 }

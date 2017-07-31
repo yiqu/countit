@@ -4,10 +4,11 @@ import { FormsModule } from '@angular/forms';
 import { ResultComponent } from './result.component';
 import { WordService } from '../shared/word.service';
 
-import { MdButtonModule } from '@angular/material';
-import { MdCardModule } from '@angular/material';
-import { MdChipsModule } from '@angular/material';
-import { MdTooltipModule } from '@angular/material';
+import { MdButtonModule,
+  MdCardModule,
+  MdChipsModule,
+  MdTooltipModule,
+  MdSlideToggleModule } from '@angular/material';
 
 /**
  * Module class
@@ -19,7 +20,8 @@ import { MdTooltipModule } from '@angular/material';
     MdButtonModule,
     MdCardModule,
     MdChipsModule,
-    MdTooltipModule
+    MdTooltipModule,
+    MdSlideToggleModule
   ],
 
   declarations: [

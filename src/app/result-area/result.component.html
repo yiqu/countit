@@ -1,3 +1,10 @@
+<section class="wrap stop-word-toggle">
+  <md-slide-toggle class="example-margin" [checked]="this.wordService.stopWordsToggleState" color="warn"
+    (change)="stopWordsToggle($event)">
+   <span class="stop-word-toggle-label">{{stopWordsLabel}}</span>
+  </md-slide-toggle>
+</section>
+
 <div class="wrap counter-section" *ngIf="this.wordService.wordDetailArray.length > 0">
   {{this.wordService.wordDetailArray.length}} total words, 
   {{this.wordService.existingArray.length}} are unique.

@@ -46,17 +46,19 @@ import { WordDetail } from '../shared/word.model';
   ]
 })
 export class ResultComponent {
-
   chipDefaultTextColor: string = "#000";
   googleDefineUrl: string = "https://www.google.com/search?q=definition+for+";
+  stopWordsLabel: string;
 
 
   /**
-   * Constructor
+   * Constructor. Inject word service, and update toggle label.
    * 
    * @param {WordService} wordService - injected Word Service
    */
-  constructor(public wordService: WordService) {}
+  constructor(public wordService: WordService) {
+    this.updateToggleLabel();
+  }
 
 
   /**
@@ -76,5 +78,26 @@ export class ResultComponent {
    */
   getDefinition(clicked: WordDetail): void {
      window.open(this.googleDefineUrl + clicked.word, "_blank");
+  }
+
+
+  /**
+   * Toggle action.
+   * 
+   * @param {any} event - event
+   */
+  stopWordsToggle(event: any): void {
+    this.wordService.stopWordsToggleState = event.checked;
+    this.updateToggleLabel();
+  }
+
+
+  /**
+   * Update the toggle label text.
+   * 
+   */
+  updateToggleLabel(): void {
+    this.stopWordsLabel = this.wordService.stopWordsToggleState === true ? 
+      "Ignore Stop Words" : "Keep Stop Words";
   }
 }

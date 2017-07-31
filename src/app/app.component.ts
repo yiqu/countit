@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-
+import 'rxjs';
 // App version
 const { version: appVersion } = require('../../package.json')
 
