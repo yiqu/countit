@@ -1,12 +1,8 @@
 # Countit
 
-Text analyzer. Live demo: https://yiqu.github.io/countit/
+Text analyzer. Live demo: https://yiqu.github.io/countit/?stopWords=true
 
-Material components used:
-- [Chips](https://material.angular.io/components/chips/overview)
-
-Angular Animations:
- - [Animations](https://angular.io/guide/animations)
+Set query param `stopWords=` of URL to `false` to keep stop words.
 
 ## Fork and Run
 
