@@ -1,9 +1,12 @@
-<h1 id="header" class='wrap text-title'>{{pageTitle}} <span class="version">v{{appVersion}}</span></h1>
+<h1 id="header" class='wrap text-title'>{{pageTitle}} <span class="version">
+  <a [routerLink]="['/about']" [routerLinkActive]="['router-link-active']" 
+    [routerLinkActiveOptions]="{exact:true}">v{{appVersion}}
+  </a></span></h1>
 <p class="wrap subtitle">
-  Text analyzer will examine your wall of text and display the occurrence of each word
-  in colored click-able bars. Clicking on a bar will display some more details.
-  <br><br>To get started, start typing, or paste some text into the text-box below. To see an example,
-  click the "Try Me!" button.
+  Text analyzer will examine your wall of text and display the occurrence of each unique word
+  in click-able bars. Clicking on a word will display more details.
+  <br><br>To get started, start typing or paste some text into the text-box below. To see an example,
+  click "Try Me!".
   
 </p>
 <input-area></input-area>

@@ -50,6 +50,7 @@ export class ResultComponent implements OnInit {
   chipDefaultTextColor: string = "#000";
   googleDefineUrl: string = "https://www.google.com/search?q=definition+for+";
   stopWordsLabel: string;
+  errorMessage: string;
   
 
   /**
@@ -63,22 +64,37 @@ export class ResultComponent implements OnInit {
       this.updateToggleLabel();
   }
 
+
+  /**
+   * On init, executed once.
+   * Get query params and toggle stop words.
+   */
   ngOnInit() {
     this.route.queryParams
     .subscribe(params => {
     // Defaults to stopWords=false if no query param provided.
-    // this.page = +params['page'] || 0;
       if (params['stopWords'] !== undefined) {
-        
         this.wordService.stopWordsToggleState = (params['stopWords']==="true");
-        
       } else {
-        this.router.navigate(['/analyze'], {queryParams: {
+        this.router.navigate(['/'], {queryParams: {
           stopWords: this.wordService.stopWordsToggleState
         }});
       }
-      console.log(this.wordService.stopWordsToggleState + " " + params['stopWords']);
     });
+    // make HTTP call for stop words list
+    this.wordService.getStopWords()
+      .subscribe (
+        (res) => {
+          this.wordService.stopWords = res;
+        },
+        (error) => {
+          this.errorMessage = <any>error
+        },
+        () => {
+          console.log('finished loading');
+        }
+      );
+
   }
 
 
@@ -109,9 +125,13 @@ export class ResultComponent implements OnInit {
    */
   toggleStopWords(event: any): void {
     this.wordService.stopWordsToggleState = event.checked;
-    this.router.navigate(['/analyze'], {queryParams: {
+    this.router.navigate(['/'], {queryParams: {
       stopWords: this.wordService.stopWordsToggleState
     }});
+
+    if (this.wordService.parsedText !== undefined && this.wordService.parsedText.length > 0) {
+      this.wordService.calculate(this.wordService.parsedText);
+    }
 
     this.updateToggleLabel();
   }
@@ -123,6 +143,6 @@ export class ResultComponent implements OnInit {
    */
   updateToggleLabel(): void {
     this.stopWordsLabel = this.wordService.stopWordsToggleState === true ? 
-      "Ignore Stop Words" : "Keep Stop Words";
+      "Ignoring Stop Words" : "Keeping Stop Words";
   }
 }

@@ -7,6 +7,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BodyModule } from './body-area/body.module';
 import { NotFoundModule } from './404/404.module';
+import { VersionModule } from './versions/versions.module';
 
 import 'hammerjs';
 
@@ -26,7 +27,8 @@ import 'hammerjs';
     BrowserAnimationsModule,
     FormsModule,
     HttpModule,
-    NotFoundModule
+    NotFoundModule,
+    VersionModule
   ],
 
   providers: [],

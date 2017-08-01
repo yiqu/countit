@@ -1,21 +1,25 @@
 <section class="wrap stop-word-toggle">
   <md-slide-toggle class="example-margin" [checked]="this.wordService.stopWordsToggleState" 
-    color="warn" (change)="toggleStopWords($event)">
+    color="primary" (change)="toggleStopWords($event)">
    <span class="stop-word-toggle-label">{{stopWordsLabel}}</span>
   </md-slide-toggle>
 </section>
 
-<div class="wrap counter-section" *ngIf="this.wordService.wordDetailArray.length > 0">
-  {{this.wordService.wordDetailArray.length}} total words, 
-  {{this.wordService.existingArray.length}} are unique.
+<div class="wrap counter-section" *ngIf="this.wordService.rawInputArray.length > 0">
+  Total words: {{this.wordService.rawInputArray.length}}. 
+  Unique: {{this.wordService.resultArray.length}}.
+  <span *ngIf="this.wordService.stopWordsToggleState === true"> 
+    (removed {{this.wordService.stopWordCount}} stop words)
+  </span>
 </div>
-<div class="wrap counter-section" *ngIf="this.wordService.wordDetailArray.length === 0">
+
+<div class="wrap counter-section" *ngIf="this.wordService.rawInputArray.length === 0">
   No words detected.
 </div>  
 
 <div class="wrap">
   <md-chip-list class="mat-chip-list-stacked">
-    <div class="word-display" *ngFor="let word of this.wordService.existingArray"
+    <div class="word-display" *ngFor="let word of this.wordService.resultArray"
       [@slideIn]="word.state">
       <md-chip class="chip"
         selected="true"

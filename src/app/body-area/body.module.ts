@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+import { RouterModule } from '@angular/router';
 import { InputModule } from '../input-area/input.module';
 import { ResultModule } from '../result-area/result.module';
 import { BodyComponent } from './body.component';
@@ -9,7 +10,8 @@ import { BodyComponent } from './body.component';
 @NgModule({
   imports: [
     InputModule,
-    ResultModule
+    ResultModule,
+    RouterModule 
   ],
 
   declarations: [

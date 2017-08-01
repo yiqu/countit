@@ -1,0 +1,6 @@
+<md-list class="wrap">
+  <h3 md-subheader>CHANGELOG</h3>
+  <md-list-item *ngFor="let change of changelog">
+  <h4 md-line><u>{{change.version}}</u> - {{change.date | date}}</h4>
+  <p md-line> {{change.changes}} </p></md-list-item>
+</md-list>

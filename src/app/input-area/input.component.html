@@ -2,6 +2,6 @@
   <div class="example-button-section">
     <button md-raised-button class="example-button" (click)=clickExample()>{{exampleButtonText}}</button>
   </div>
-  <textarea [(ngModel)]="inputText" (keyup)="onKeyup()" class="input-area" 
+  <textarea [(ngModel)]="this.wordService.rawText" (keyup)="onKeyup()" class="input-area" 
     mdInput [placeholder]="placeholderText"></textarea>
 </div>
