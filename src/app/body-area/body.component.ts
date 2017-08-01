@@ -1,13 +1,19 @@
 import { Component, OnInit } from '@angular/core';
+// App version
+const { version: appVersion } = require('../../../package.json')
 
 @Component({
   moduleId: module.id,
   selector: 'body-component',
-  templateUrl: 'body.component.html'
+  templateUrl: 'body.component.html',
+  styleUrls: ['./body.component.css']
 })
 
-export class BodyComponent implements OnInit {
-  constructor() { }
+export class BodyComponent {
+  pageTitle: string = "Text Analyzer"
+  appVersion: string;
 
-  ngOnInit() { }
+  constructor() {
+    this.appVersion = appVersion
+  }
 }

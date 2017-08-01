@@ -6,6 +6,7 @@ import { HttpModule } from '@angular/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BodyModule } from './body-area/body.module';
+import { NotFoundModule } from './404/404.module';
 
 import 'hammerjs';
 
@@ -24,7 +25,8 @@ import 'hammerjs';
     BrowserModule,
     BrowserAnimationsModule,
     FormsModule,
-    HttpModule
+    HttpModule,
+    NotFoundModule
   ],
 
   providers: [],

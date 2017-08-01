@@ -32,7 +32,7 @@ export class WordService {
    */
   calculate(inputArray: Array<string>): void {
     console.log("stopwords: " + this.stopWordsToggleState);
-    
+
     this.wordDetailArray = inputArray;
     this.existingArray = [];
     let largestDisplayPercent = 0;

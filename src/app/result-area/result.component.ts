@@ -46,11 +46,11 @@ import { WordDetail } from '../shared/word.model';
     ])
   ]
 })
-export class ResultComponent implements OnInit{
+export class ResultComponent implements OnInit {
   chipDefaultTextColor: string = "#000";
   googleDefineUrl: string = "https://www.google.com/search?q=definition+for+";
   stopWordsLabel: string;
-
+  
 
   /**
    * Constructor. Inject word service, and update toggle label.
@@ -68,7 +68,16 @@ export class ResultComponent implements OnInit{
     .subscribe(params => {
     // Defaults to stopWords=false if no query param provided.
     // this.page = +params['page'] || 0;
-    console.log(params);
+      if (params['stopWords'] !== undefined) {
+        
+        this.wordService.stopWordsToggleState = (params['stopWords']==="true");
+        
+      } else {
+        this.router.navigate(['/analyze'], {queryParams: {
+          stopWords: this.wordService.stopWordsToggleState
+        }});
+      }
+      console.log(this.wordService.stopWordsToggleState + " " + params['stopWords']);
     });
   }
 
@@ -99,10 +108,11 @@ export class ResultComponent implements OnInit{
    * @param {any} event - event
    */
   toggleStopWords(event: any): void {
-    this.router.navigate(['/analyze'], {queryParams: {
-        stopWords: event.checked
-    }});
     this.wordService.stopWordsToggleState = event.checked;
+    this.router.navigate(['/analyze'], {queryParams: {
+      stopWords: this.wordService.stopWordsToggleState
+    }});
+
     this.updateToggleLabel();
   }
 
