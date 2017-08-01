@@ -72,12 +72,12 @@ export class ResultComponent implements OnInit {
   ngOnInit() {
     this.route.queryParams
     .subscribe(params => {
-    // Defaults to stopWords=false if no query param provided.
-      if (params['stopWords'] !== undefined) {
-        this.wordService.stopWordsToggleState = (params['stopWords']==="true");
+    // Defaults to ignoreStopWords=true if no query param provided.
+      if (params['ignoreStopWords'] !== undefined) {
+        this.wordService.stopWordsToggleState = (params['ignoreStopWords']==="true");
       } else {
         this.router.navigate(['/'], {queryParams: {
-          stopWords: this.wordService.stopWordsToggleState
+          ignoreStopWords: this.wordService.stopWordsToggleState
         }});
       }
     });
@@ -126,7 +126,7 @@ export class ResultComponent implements OnInit {
   toggleStopWords(event: any): void {
     this.wordService.stopWordsToggleState = event.checked;
     this.router.navigate(['/'], {queryParams: {
-      stopWords: this.wordService.stopWordsToggleState
+      ignoreStopWords: this.wordService.stopWordsToggleState
     }});
 
     if (this.wordService.parsedText !== undefined && this.wordService.parsedText.length > 0) {
