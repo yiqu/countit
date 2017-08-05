@@ -9,9 +9,13 @@ import { VersionComponent } from './version.component';
     CommonModule
   ],
 
-  exports: [VersionComponent],
+  exports: [
+    VersionComponent
+  ],
 
-  declarations: [VersionComponent],
+  declarations: [
+    VersionComponent
+  ],
   
   providers: [],
 })
