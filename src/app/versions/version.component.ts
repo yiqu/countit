@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 
 
 /**
- * About component class.
+ * Version component class.
  * 
  */
 @Component({
@@ -13,27 +13,28 @@ import { Component } from '@angular/core';
 })
 export class VersionComponent {
   constructor() {}
-
+  
+  // change log information array
   changelog: Array<Object> = [
     {
       version: '1.0.0',
       date: new Date('7/01/17'),
-      changes: 'Created application.',
+      changes: 'Created application.'
     },
     {
       version: '1.1.0',
       date: new Date('7/15/16'),
-      changes: 'Look and feel update.',
+      changes: 'Look and feel update.'
     },
     {
       version: '1.2.0',
       date: new Date('7/20/16'),
-      changes: 'Look and feel update.',
+      changes: 'Look and feel update.'
     },
     {
       version: '1.3.0',
       date: new Date('8/01/17'),
-      changes: 'Added capability to remove stop words.',
+      changes: 'Added capability to remove stop words.'
     }
   ];
 }
