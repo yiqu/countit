@@ -28,7 +28,7 @@ export class VersionComponent {
     },
     {
       version: '1.2.0',
-      date: new Date('7/28/16'),
+      date: new Date('7/28/17'),
       changes: 'Added extra logic for chip length'
     },
     {
