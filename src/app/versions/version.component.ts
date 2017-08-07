@@ -18,18 +18,18 @@ export class VersionComponent {
   changelog: Array<Object> = [
     {
       version: '1.0.0',
-      date: new Date('7/01/17'),
+      date: new Date('6/7/17'),
       changes: 'Created application'
     },
     {
       version: '1.1.0',
-      date: new Date('7/15/16'),
-      changes: 'Look and feel update'
+      date: new Date('6/28/17'),
+      changes: 'Added Angular Animation'
     },
     {
       version: '1.2.0',
-      date: new Date('7/20/16'),
-      changes: 'Look and feel update'
+      date: new Date('7/28/16'),
+      changes: 'Added extra logic for chip length'
     },
     {
       version: '1.3.0',
