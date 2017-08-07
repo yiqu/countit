@@ -78,6 +78,7 @@ export class WordService {
         }  
       }
     }
+    
     // Sort it by DESCENDING
     this.resultArray.sort((a,b) => {
       return b.count - a.count

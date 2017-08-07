@@ -91,7 +91,7 @@ export class ResultComponent implements OnInit {
           this.errorMessage = <any>error
         },
         () => {
-          console.log('finished loading');
+          // executed on completion
         }
       );
 
