@@ -1,22 +1,25 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MdListModule } from '@angular/material';
-import { VersionComponent } from './version.component';
+import { AboutComponent } from './about.component';
+import { RouterModule } from '@angular/router';
+import { routes } from './about.routing';
+
 
 @NgModule({
   imports: [
     MdListModule, 
-    CommonModule
+    CommonModule,
+    RouterModule.forChild(routes)
   ],
 
   exports: [
-    VersionComponent
   ],
 
   declarations: [
-    VersionComponent
+    AboutComponent
   ],
   
   providers: [],
 })
-export class VersionModule {}
+export class AboutModule {}

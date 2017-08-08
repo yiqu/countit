@@ -2,16 +2,16 @@ import { Component } from '@angular/core';
 
 
 /**
- * Version component class.
+ * Lazy loaded about component class.
  * 
  */
 @Component({
   moduleId: module.id,
   selector: 'version',
-  templateUrl: 'version.component.html',
-  styleUrls: ['./version.component.css'],
+  templateUrl: 'about.component.html',
+  styleUrls: ['./about.component.css'],
 })
-export class VersionComponent {
+export class AboutComponent {
   constructor() {}
   
   // change log information array

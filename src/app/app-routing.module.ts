@@ -2,17 +2,22 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { BodyComponent } from './body-area/body.component';
 import { NotFoundComponent } from './404/404.component';
-import { VersionComponent } from './versions/version.component';
 
+
+/**
+ * Routing for app.
+ * For re-direct:
+ * { path: '', redirectTo: '/analyze', pathMatch: 'full' },
+ * 
+ */
 const routes: Routes = [
   {
     path: '',
     component: BodyComponent
   },
-  //{ path: '', redirectTo: '/analyze', pathMatch: 'full' },
   {
-    path: 'about',
-    component: VersionComponent
+    path: 'about', // Lazy loaded
+    loadChildren: './versions/about.module#AboutModule'
   },
   {
     path: '**',
