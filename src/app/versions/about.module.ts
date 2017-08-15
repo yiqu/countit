@@ -13,8 +13,7 @@ import { routes } from './about.routing';
     RouterModule.forChild(routes)
   ],
 
-  exports: [
-  ],
+  exports: [],
 
   declarations: [
     AboutComponent
