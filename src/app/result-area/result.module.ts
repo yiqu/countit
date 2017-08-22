@@ -1,17 +1,17 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { ResultComponent } from './result.component';
-import { WordService } from '../shared/word.service';
-
 import { MdButtonModule,
   MdCardModule,
   MdChipsModule,
   MdTooltipModule,
   MdSlideToggleModule } from '@angular/material';
+import { ResultComponent } from './result.component';
+import { WordService } from '../shared/word.service';
+
 
 /**
- * Module class
+ * Result area module
  */
 @NgModule({
   imports: [

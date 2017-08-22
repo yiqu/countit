@@ -1,13 +1,13 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { MdButtonModule, MdTooltipModule } from '@angular/material';
-
 import { InputComponent } from './input.component';
+import { MdButtonModule, MdTooltipModule } from '@angular/material';
 import { WordService } from '../shared/word.service';
 
+
 /**
- * Module class
+ * Input area module
  */
 @NgModule({
   imports: [

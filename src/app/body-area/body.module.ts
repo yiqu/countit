@@ -1,11 +1,12 @@
 import { NgModule } from '@angular/core';
-import { RouterModule } from '@angular/router';
+import { BodyComponent } from './body.component';
 import { InputModule } from '../input-area/input.module';
 import { ResultModule } from '../result-area/result.module';
-import { BodyComponent } from './body.component';
+import { RouterModule } from '@angular/router';
+
 
 /**
- * Module class
+ * Module for the app
  */
 @NgModule({
   imports: [
