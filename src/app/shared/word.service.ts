@@ -3,6 +3,7 @@ import { Http, Response } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
 import { WordDetail } from './word.model';
 
+
 /**
  * Injectable Word Service. Calculations are done here.
  */
