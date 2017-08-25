@@ -79,9 +79,10 @@ export class InputComponent implements OnInit {
 
 
   /**
-   * Helper function to parse out words.
+   * Helper function to parse out rightly formed words.
    * 
    * @param {string} input - user input
+   * @returns {Array<string>} - list of words without badly formed words
    */
   extractWords(input: string): Array<string> {
     if (input === "") {
