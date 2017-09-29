@@ -45,7 +45,7 @@ export class AboutComponent {
     },
     {
       version: '1.4.2',
-      date: new Date('9/92/17'),
+      date: new Date('9/29/17'),
       changes: 'Chores. Updated dependency versions for Angular and Material'
     }
   ];
