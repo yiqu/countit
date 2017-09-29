@@ -7,7 +7,8 @@ import { AboutComponent } from './about.component';
  * 
  */
 export const routes: Routes = [
-  { path: '', 
+  { 
+    path: '', 
     component: AboutComponent 
-  },
+  }
 ];

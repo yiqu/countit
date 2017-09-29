@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { MdListModule } from '@angular/material';
+import { MatListModule } from '@angular/material';
 import { AboutComponent } from './about.component';
 import { RouterModule } from '@angular/router';
 import { routes } from './about.routing';
@@ -8,12 +8,14 @@ import { routes } from './about.routing';
 
 @NgModule({
   imports: [
-    MdListModule, 
+    MatListModule, 
     CommonModule,
     RouterModule.forChild(routes)
   ],
 
-  exports: [],
+  exports: [
+    AboutComponent
+  ],
 
   declarations: [
     AboutComponent

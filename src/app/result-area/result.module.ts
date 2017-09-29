@@ -1,11 +1,11 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { MdButtonModule,
-  MdCardModule,
-  MdChipsModule,
-  MdTooltipModule,
-  MdSlideToggleModule } from '@angular/material';
+import { MatButtonModule,
+  MatCardModule,
+  MatChipsModule,
+  MatTooltipModule,
+  MatSlideToggleModule } from '@angular/material';
 import { ResultComponent } from './result.component';
 import { WordService } from '../shared/word.service';
 
@@ -17,11 +17,11 @@ import { WordService } from '../shared/word.service';
   imports: [
     CommonModule,
     FormsModule,
-    MdButtonModule,
-    MdCardModule,
-    MdChipsModule,
-    MdTooltipModule,
-    MdSlideToggleModule
+    MatButtonModule,
+    MatCardModule,
+    MatChipsModule,
+    MatTooltipModule,
+    MatSlideToggleModule
   ],
 
   declarations: [
