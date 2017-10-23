@@ -1,6 +1,6 @@
 # Countit
 
-Text analyzer. Option to ignore [stopwords](https://en.wikipedia.org/wiki/Stop_words)
+Text analyzer. Option to ignore [stopwords](https://en.wikipedia.org/wiki/Stop_words).
 
 Live demo: https://yiqu.github.io/countit/?ignoreStopWords=true
 
