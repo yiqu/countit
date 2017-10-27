@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import 'rxjs';
+import 'rxjs/Rx';
 
 
 /**

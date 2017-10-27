@@ -1,13 +1,13 @@
-<md-list class="wrap">
-  <h3 class="change-title" md-subheader>CHANGE LOG</h3>
-  <md-list-item *ngFor="let change of changelog">
-    <h4 md-line>
+<mat-list class="wrap">
+  <h3 class="change-title" mat-subheader>CHANGE LOG</h3>
+  <mat-list-item *ngFor="let change of changelog">
+    <h4 mat-line>
       <span class="version">{{change.version}}</span> - <span class="date">{{change.date | date}}</span>
     </h4>
-    <p class="change-text" md-line>{{change.changes}}
+    <p class="change-text" mat-line>{{change.changes}}
       <a *ngIf="change.externalLink !== undefined" [href]="change.linkUrl" target="_blank">
         {{change.externalLink}}
       </a>
     </p>
-  </md-list-item>
-</md-list>
+  </mat-list-item>
+</mat-list>

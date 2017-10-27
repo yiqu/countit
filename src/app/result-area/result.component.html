@@ -1,8 +1,8 @@
 <section class="wrap stop-word-toggle">
-  <md-slide-toggle class="example-margin" [checked]="this.wordService.stopWordsToggleState" 
+  <mat-slide-toggle class="example-margin" [checked]="this.wordService.stopWordsToggleState" 
     color="primary" (change)="toggleStopWords($event)">
    <span class="stop-word-toggle-label">{{stopWordsLabel}}</span>
-  </md-slide-toggle>
+  </mat-slide-toggle>
 </section>
 
 <div class="wrap counter-section" *ngIf="this.wordService.rawInputArray.length > 0">
@@ -18,10 +18,10 @@
 </div>  
 
 <div class="wrap">
-  <md-chip-list class="mat-chip-list-stacked">
+  <mat-chip-list class="mat-chip-list-stacked">
     <div class="word-display" *ngFor="let word of this.wordService.resultArray"
       [@slideIn]="word.state">
-      <md-chip class="chip"
+      <mat-chip class="chip"
         selected="true"
         (click)="chipSelect(word)" 
         color="" 
@@ -30,16 +30,16 @@
                     'background-color':word.bgColor,
                     'max-width':word.displayPercent}">
           "{{word.word}}" <span class="chip-percent">({{word.percent}})</span>
-      </md-chip>
-      <md-card [ngStyle]="{'background-color':word.bgColor}" 
+      </mat-chip>
+      <mat-card [ngStyle]="{'background-color':word.bgColor}" 
         class="word-detail-card" [@shrinkOut]="word.hideDetail">
-          <md-card-header class="detail-inner-title">
-            <md-card-title>
+          <mat-card-header class="detail-inner-title">
+            <mat-card-title>
               <span class="detail-inner-label">Word:</span> 
               <span class="detail-inner-value">{{word.word}}</span>
-            </md-card-title>
-          </md-card-header>
-          <md-card-content>
+            </mat-card-title>
+          </mat-card-header>
+          <mat-card-content>
             <p class="occur-label">
              <span class="detail-inner-label">Occurrences:</span> 
              <span class="detail-inner-value">{{word.count}}</span> 
@@ -48,14 +48,14 @@
              <span class="detail-inner-value">{{word.percent}}</span> 
              <span class="detail-inner-para">of the text.</span>
             </p>
-          </md-card-content>
-          <md-card-actions class="card-actions">
-            <button md-raised-button [ngStyle]="{'background-color':word.bgColor}" (click)="getDefinition(word)" md-button>
+          </mat-card-content>
+          <mat-card-actions class="card-actions">
+            <button mat-raised-button [ngStyle]="{'background-color':word.bgColor}" (click)="getDefinition(word)" button>
               Get Definition
               <i class="material-icons card-action-icon">call_made</i>
             </button>
-          </md-card-actions>
-      </md-card>
+          </mat-card-actions>
+      </mat-card>
     </div>
-  </md-chip-list>
+  </mat-chip-list>
 </div>

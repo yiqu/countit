@@ -1,7 +1,7 @@
 <div id="input" class="wrap"> 
   <div class="example-button-section">
-    <button md-raised-button class="example-button" (click)=clickExample()>{{exampleButtonText}}</button>
+    <button mat-raised-button class="example-button" (click)=clickExample()>{{exampleButtonText}}</button>
   </div>
   <textarea [(ngModel)]="this.wordService.rawText" (keyup)="onKeyup()" class="input-area" 
-    mdInput [placeholder]="placeholderText"></textarea>
+    matInput [placeholder]="placeholderText"></textarea>
 </div>
