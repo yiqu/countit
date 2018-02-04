@@ -1,6 +1,7 @@
 /**
  * Class that represent a word's details.
  */
+
 export class WordDetail {
   word: string;
   count: number;
