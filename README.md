@@ -2,7 +2,7 @@
 
 Text analyzer. Live demo: https://yiqu.github.io/countit/?ignoreStopWords=true
 
-Set query param `ignoreStopWords=` to `false` to keep stopwords when analyzing. When no query param is supplied,
+Set the query param `ignoreStopWords=` to `false` to keep stopwords when analyzing. When no query param is supplied,
 it will be set to `true` on default.
 
 ## Fork and Run
